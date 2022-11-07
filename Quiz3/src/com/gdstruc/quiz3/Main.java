@@ -1,25 +1,9 @@
 package com.gdstruc.quiz3;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
-    /*
-    Create a matchmaking algorithm for players.
-
-    Mechanics:
-DONE        1 - Every turn, x players will be enqueued for matchmaking (x = rand () 1 to 7). Pressing enter ends the turn.
-DONE        2 - A game can be started when at least 5 players are in the queue.
-DONE        3 - When a game starts, dequeue the first 5 players from the queue.
-DONE        4 - The program terminates when 10 games have been successfully made.
-    */
-
-    /*
-    * PLAN:
-    *   - Make Player Class             DONE
-    *   - Make Queue Class              DONE
-    *   - make use of do while loops    DONE
-    */
-
     public static void main(String[] args){
         Random random = new Random();
         PlayerQueue queue = new PlayerQueue(10);
@@ -45,6 +29,12 @@ DONE        4 - The program terminates when 10 games have been successfully made
             System.out.println("\n===== ROUND " + gameRounds + " =====");
             System.out.println("Player Queue:");
             queue.printQueue();
+
+            System.out.println("\n=================================================================");
+            System.out.println("P R E S S  [ E N T E R ]  T O  E N D  R O U N D");
+
+            Scanner enter = new Scanner(System.in);
+            enter.nextLine();
 
             for (int b = 0; b < 5; b++) {
                 queue.dequeue();
